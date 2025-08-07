@@ -41,7 +41,7 @@ onMounted(() => {
 }
 
 * {
-  font-family: 'EduKai', 'Goudy Old Style', serif;
+  font-family: 'SimSun', '宋体', 'Goudy Old Style', serif;
 }
 
 .app-container {

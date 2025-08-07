@@ -110,17 +110,6 @@
               <li><el-icon><Check /></el-icon>动态适应：支持行业特色权重配置</li>
             </ul>
           </div>
-          <div class="model-visual">
-            <div class="formula-visual">
-              <div class="dimension-node e-node">E</div>
-              <div class="dimension-node s-node">S</div>
-              <div class="dimension-node g-node">G</div>
-              <div class="cross-line line-1"></div>
-              <div class="cross-line line-2"></div>
-              <div class="cross-line line-3"></div>
-              <div class="result-node">ESG</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -150,6 +139,7 @@
       <div class="footer-content">
         <div class="footer-text">
           <p>&copy; 2024 ESG评分系统. 基于甲模型量化评估框架</p>
+          <p class="team-info">由 QureLab 团队制作</p>
         </div>
       </div>
     </footer>
@@ -241,21 +231,22 @@ const viewDemo = () => {
 
 // 导航栏 - 黑白专业风格
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 16px 32px;
+  border-radius: var(--radius-xl);
   background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
   
   .nav-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-width: 1000px;
     height: 50px;
   }
   
@@ -583,91 +574,7 @@ const viewDemo = () => {
         }
       }
     }
-    
-    .model-visual {
-      flex: 1;
-      
-      .formula-visual {
-        position: relative;
-        height: 300px;
-        
-        .dimension-node {
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          font-weight: 600;
-          color: white;
-          
-          &.e-node {
-            top: 20px;
-            left: 20px;
-            background: #52c41a;
-          }
-          
-          &.s-node {
-            top: 20px;
-            right: 20px;
-            background: #1890ff;
-          }
-          
-          &.g-node {
-            bottom: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #722ed1;
-          }
-        }
-        
-        .result-node {
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          background: var(--gradient-primary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          font-weight: 600;
-          color: white;
-        }
-        
-        .cross-line {
-          position: absolute;
-          height: 2px;
-          background: var(--primary-color);
-          opacity: 0.6;
-          
-          &.line-1 {
-            top: 50px;
-            left: 80px;
-            width: 120px;
-          }
-          
-          &.line-2 {
-            top: 80px;
-            left: 50px;
-            width: 100px;
-            transform: rotate(45deg);
-          }
-          
-          &.line-3 {
-            top: 80px;
-            right: 50px;
-            width: 100px;
-            transform: rotate(-45deg);
-          }
-        }
-      }
-    }
+
   }
 }
 
@@ -779,6 +686,12 @@ const viewDemo = () => {
     .footer-text {
       color: var(--text-muted);
       font-size: 14px;
+      
+      .team-info {
+        margin-top: 8px;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
     }
   }
 }
